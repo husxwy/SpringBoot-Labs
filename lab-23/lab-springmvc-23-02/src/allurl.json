@@ -1,0 +1,84 @@
+[
+  {
+    "method": "add",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.ProductController",
+    "type": "POST",
+    "url": "/products/add"
+  },
+  {
+    "method": "get2",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.UserController",
+    "type": "GET",
+    "url": "/users/get2"
+  },
+  {
+    "method": "get3",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.UserController",
+    "type": "POST",
+    "url": "/users/get"
+  },
+  {
+    "method": "exception01",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.UserController",
+    "type": "GET",
+    "url": "/users/exception-01"
+  },
+  {
+    "method": "exception02",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.UserController",
+    "type": "GET",
+    "url": "/users/exception-02"
+  },
+  {
+    "method": "doSomething",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.UserController",
+    "type": "GET",
+    "url": "/users/do_something"
+  },
+  {
+    "method": "currentUser",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.UserController",
+    "type": "GET",
+    "url": "/users/current_user"
+  },
+  {
+    "method": "exception03",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.UserController",
+    "type": "GET",
+    "url": "/users/exception-03"
+  },
+  {
+    "method": "add",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.UserController",
+    "type": "POST",
+    "url": "/users/add"
+  },
+  {
+    "method": "get",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller.UserController",
+    "type": "GET",
+    "url": "/users/get"
+  },
+  {
+    "method": "get",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller2.TestController",
+    "type": "GET",
+    "url": "/test/get"
+  },
+  {
+    "method": "getAllUrl",
+    "className": "cn.iocoder.springboot.lab23.springmvc.controller2.test",
+    "type": "GET",
+    "url": "/v1/getAllUrl"
+  },
+  {
+    "method": "errorHtml",
+    "className": "org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController",
+    "url": "/error"
+  },
+  {
+    "method": "error",
+    "className": "org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController",
+    "url": "/error"
+  }
+]

@@ -1,0 +1,16 @@
+GET http://127.0.0.1:8080/users/get?id=1
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8080/users/get2?id=0001
+Accept: application/json
+
+###
+
+# 参数缺失
+GET http://127.0.0.1:8080/users/get2
+Accept: application/json
+
+
+###
