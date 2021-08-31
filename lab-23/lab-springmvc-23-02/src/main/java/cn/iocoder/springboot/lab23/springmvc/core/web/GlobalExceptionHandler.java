@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @Description: 全局异常处理 <br>
+ * @param: null
+ * @Return:
+ * @Author: husx
+ * @Date: 2021/8/18 下午2:02
+ */
 @ControllerAdvice(basePackages = "cn.iocoder.springboot.lab23.springmvc.controller")
 public class GlobalExceptionHandler {
 

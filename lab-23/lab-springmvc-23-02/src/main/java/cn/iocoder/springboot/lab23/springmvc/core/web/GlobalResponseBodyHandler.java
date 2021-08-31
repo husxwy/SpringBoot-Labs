@@ -8,6 +8,13 @@ import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
+/**
+ * @Description: 全局统一返回的处理器 <br>
+ * @param: null
+ * @Return:
+ * @Author: husx
+ * @Date: 2021/8/18 下午2:01
+ */
 // 只拦截我们的 Controller 所在包，避免其它类似 swagger 提供的 API 被切面拦截
 @ControllerAdvice(basePackages = "cn.iocoder.springboot.lab23.springmvc.controller")
 public class GlobalResponseBodyHandler implements ResponseBodyAdvice {

@@ -11,8 +11,8 @@
     <modules>
 
         <!-- Spring Boot 示例 -->
-<!--        <module>lab-01-spring-security</module>-->
-<!--        <module>lab-02-spring-security-oauth</module>-->
+        <module>lab-01-spring-security</module>
+        <module>lab-02-spring-security-oauth</module>
 <!--        <module>lab-03-kafka</module>-->
 <!--        <module>lab-04-rabbitmq</module>-->
 <!--        <module>lab-05-benchmark-tomcat-jetty-undertow</module>-->
@@ -30,8 +30,8 @@
 <!--        <module>lab-20</module>-->
 <!--        <module>lab-21</module>-->
 <!--        <module>lab-22</module>-->
-<!--        <module>lab-23</module>-->
-        <module>lab-24</module>
+        <module>lab-23</module>
+<!--        <module>lab-24</module>-->
 <!--        <module>lab-25</module>-->
 <!--        <module>lab-26</module>-->
 <!--        <module>lab-27</module>-->
@@ -54,7 +54,7 @@
 <!--        <module>lab-44</module>-->
 <!--        <module>lab-45</module>-->
 <!--        <module>lab-46</module>-->
-<!--        <module>lab-47</module>-->
+        <module>lab-47</module>
 <!--        <module>lab-48-hot-swap</module>-->
 <!--        <module>lab-49</module>-->
 <!--        <module>lab-50</module>-->
@@ -62,7 +62,7 @@
 <!--        <module>lab-52</module>-->
 <!--        <module>lab-53</module>-->
 <!--        <module>lab-54</module>-->
-<!--        <module>lab-55</module>-->
+        <module>lab-55</module>
 <!--        <module>lab-56</module>-->
 <!--        <module>lab-57</module>-->
 <!--        <module>lab-58</module>-->
@@ -111,7 +111,9 @@
 <!--        <module>labx-28</module>-->
 <!--        <module>labx-29-spring-cloud-consul-bus</module>-->
 <!--        <module>labx-30-spring-cloud-grpc</module>-->
-        <module>lab-71-http-debug</module>
+
+<!--        <module>lab-71-http-debug</module>-->
+
     </modules>
 
 </project>
