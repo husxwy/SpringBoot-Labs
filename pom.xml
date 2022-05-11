@@ -114,6 +114,7 @@
 
 <!--        <module>lab-71-http-debug</module>-->
 
+        <module>lab-72-minio</module>
     </modules>
 
 </project>
