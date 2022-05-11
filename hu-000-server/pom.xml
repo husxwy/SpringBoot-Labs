@@ -12,6 +12,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>hu-000-tomcat</module>
+    <module>hu-000-Undertow</module>
 <!--    <module>lab-01-springsecurity-demo-role</module>-->
   </modules>
 
