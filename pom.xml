@@ -3,7 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.3</version>
+<!--    <version>2.1.2.RELEASE</version>-->
+  </parent>
   <groupId>cn.iocoder.springboot.labs</groupId>
   <artifactId>labs-parent</artifactId>
   <packaging>pom</packaging>
@@ -11,8 +16,11 @@
   <modules>
 
     <!--     hu 组件等 demo    -->
-    <module>hu-000-server</module>
-    <module>hu-001-http</module>
+<!--    <module>hu-000-server</module>-->
+<!--    <module>hu-001-http</module>-->
+    <module>hu-002-spring</module>
+
+
 
     <!-- Spring Boot 示例 -->
     <!--        <module>lab-01-spring-security</module>-->

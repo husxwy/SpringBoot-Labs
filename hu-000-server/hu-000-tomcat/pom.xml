@@ -68,7 +68,7 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <version>2.3.7.RELEASE</version>
         <configuration>
-          <mainClass>com.example.hu001httpclient4.Hu001Httpclient4Application</mainClass>
+          <mainClass>Hu001Httpclient4Application</mainClass>
         </configuration>
         <executions>
           <execution>
