@@ -1,6 +1,7 @@
 package cn.iocoder.springboot.lab03.kafkademo.consumer;
 
 import cn.iocoder.springboot.lab03.kafkademo.message.Demo08Message;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -18,6 +19,22 @@ public class Demo08Consumer {
         logger.info("[onMessage][线程编号:{} 消息内容：{}]", Thread.currentThread().getId(), message);
         // 提交消费进度
         if (message.getId() % 2 == 1) {
+            acknowledgment.acknowledge();
+        }
+    }
+
+    @KafkaListener(topics = "test.delay",
+            groupId = "demo08-consumer-group-" + Demo08Message.TOPIC)
+    public void onMessage2(ConsumerRecord consumerRecord, Acknowledgment acknowledgment) {
+        logger.info("[onMessage][线程编号:{} 消息内容：{}]", Thread.currentThread().getId(), consumerRecord);
+        // 提交消费进度
+        if (consumerRecord.offset() % 2 == 1) {
+            acknowledgment.acknowledge();
+        }
+
+       String key = (String) consumerRecord.key();
+       int num = Integer.valueOf( key.substring(key.length()-4, key.length()));
+        if (num % 2 == 1) {
             acknowledgment.acknowledge();
         }
     }

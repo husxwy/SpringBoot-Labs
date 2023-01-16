@@ -6,25 +6,29 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StopWatch;
 
 @Component
 public class Demo01AConsumer {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @KafkaListener(topics = Demo01Message.TOPIC,
-            groupId = "demo01-A-consumer-group-" + Demo01Message.TOPIC)
-    public void onMessage(ConsumerRecord<Integer, String> record) {
-        logger.info("[onMessage][线程编号:{} 消息内容：{}]", Thread.currentThread().getId(), record);
-    }
-
 //    @KafkaListener(topics = Demo01Message.TOPIC,
-//            groupId = "demo01-B-consumer-group-" + Demo01Message.TOPIC)
-//    public void onMessage(ConsumerRecord<Integer, String> record) throws InterruptedException {
-//        logger.info("[onMessage][线程编号:{} 消息内容：{}]", Thread.currentThread().getId(), record.partition());
-//        Thread.sleep(10 * 1000L);
-//        Thread.sleep(1L);
-//        logger.info("[onMessage][线程编号:{} 消息内容：{}]", Thread.currentThread().getId(), record.partition());
+//            groupId = "demo01-A-consumer-group-" + Demo01Message.TOPIC)
+//    public void onMessage(ConsumerRecord<Integer, String> record) {
+//        logger.info("[onMessage][线程编号:{} 消息内容：{}]", Thread.currentThread().getId(), record);
 //    }
+
+    @KafkaListener(topics = Demo01Message.TOPIC,
+            groupId = "demo01-B-consumer-group-" + Demo01Message.TOPIC)
+    public void onMessageSellp(ConsumerRecord<Integer, String> record) throws InterruptedException {
+        StopWatch stopWatch = new StopWatch("消费");
+        stopWatch.start();
+        logger.info("[onMessage1][线程编号:{} 消息内容：{}]", Thread.currentThread().getId(), record.partition());
+        Thread.sleep(30 * 1000L);
+        Thread.sleep(1L);
+        stopWatch.stop();
+        logger.info("[onMessage2][线程编号:{} 消息内容：{} stopwatch: {}]", Thread.currentThread().getId(), record,stopWatch);
+    }
 
 }

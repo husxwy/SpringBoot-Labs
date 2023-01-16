@@ -15,6 +15,10 @@ public class Demo04Consumer {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
+
+// Seeking to offset 1 for partition DEMO_04-1
+//    [Consumer clientId=consumer-1, groupId=demo04-consumer-group-DEMO_04] Seeking to offset 2 for partition DEMO_04-0
+//    TODO 是三次重试吗，失败后也 ack
     @KafkaListener(topics = Demo04Message.TOPIC,
             groupId = "demo04-consumer-group-" + Demo04Message.TOPIC)
     public void onMessage(Demo04Message message) {

@@ -38,7 +38,7 @@ public class Demo04ProducerTest {
             int id = (int) (System.currentTimeMillis() / 1000);
             SendResult result = producer.syncSend(id);
             logger.info("[testSyncSend][发送编号：[{}] 发送结果：[{}]]", id, result);
-            Thread.sleep(10 * 1000L);
+//            Thread.sleep(10 * 1000L);
         }
 
         // 阻塞等待，保证消费

@@ -21,6 +21,11 @@
             <version>2.3.3.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!-- 实现对 JSON 的自动化配置 -->
         <!-- 因为，Kafka 对复杂对象的 Message 序列化时，我们会使用到 JSON -->
         <!--

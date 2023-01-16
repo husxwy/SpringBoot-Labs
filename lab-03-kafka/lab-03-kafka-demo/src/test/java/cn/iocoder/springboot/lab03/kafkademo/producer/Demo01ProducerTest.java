@@ -13,6 +13,7 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
@@ -30,7 +31,7 @@ public class Demo01ProducerTest {
         logger.info("[testSyncSend][发送编号：[{}] 发送结果：[{}]]", id, result);
 
         // 阻塞等待，保证消费
-        new CountDownLatch(1).await();
+        new CountDownLatch(1).await(5, TimeUnit.SECONDS);
     }
 
     @Test
@@ -51,7 +52,7 @@ public class Demo01ProducerTest {
         });
 
         // 阻塞等待，保证消费
-        new CountDownLatch(1).await();
+        new CountDownLatch(1).await(5, TimeUnit.SECONDS);
     }
 //
 //    @Test
@@ -64,18 +65,18 @@ public class Demo01ProducerTest {
 //        new CountDownLatch(1).await();
 //    }
 
-//    @Test
-//    public void testSyncSendMore() throws ExecutionException, InterruptedException {
-//        for (int i = 0; i < 1000; i++) {
-//            int id = (int) (System.currentTimeMillis() / 1000);
-//            SendResult result = producer.syncSend(id);
-//            logger.info("[testSyncSend][发送编号：[{}] 发送结果：[{}]]", id, result);
+    @Test
+    public void testSyncSendMore() throws ExecutionException, InterruptedException {
+        for (int i = 0; i < 1000; i++) {
+            int id = (int) (System.currentTimeMillis() / 1000);
+            SendResult result = producer.syncSend(id);
+            logger.info("[testSyncSend][发送编号：[{}] 发送结果：[{}]]", id, result);
 //            Thread.sleep(10);
-//        }
-//
-//        // 阻塞等待，保证消费
-//        new CountDownLatch(1).await();
-//    }
+        }
+
+        // 阻塞等待，保证消费
+        new CountDownLatch(1).await();
+    }
 //
 //    @Test
 //    public void block() throws InterruptedException {
