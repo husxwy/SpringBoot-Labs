@@ -18,14 +18,15 @@
     <!--     hu 组件等 demo    -->
 <!--    <module>hu-000-server</module>-->
 <!--    <module>hu-001-http</module>-->
-    <module>hu-002-spring</module>
+<!--    <module>hu-002-spring</module>-->
+<!--    <module>hu-003-JMH</module>-->
 
 
 
     <!-- Spring Boot 示例 -->
     <!--        <module>lab-01-spring-security</module>-->
     <!--        <module>lab-02-spring-security-oauth</module>-->
-    <!--        <module>lab-03-kafka</module>-->
+            <module>lab-03-kafka</module>
     <!--        <module>lab-04-rabbitmq</module>-->
     <!--        <module>lab-05-benchmark-tomcat-jetty-undertow</module>-->
     <!--        <module>lab-06</module>-->
@@ -43,8 +44,8 @@
     <!--        <module>lab-21</module>-->
     <!--        <module>lab-22</module>-->
     <!--        <module>lab-23</module>-->
-    <!--        <module>lab-24</module>-->
-    <!--        <module>lab-25</module>-->
+<!--            <module>lab-24</module>-->
+<!--            <module>lab-25</module>-->
     <!--        <module>lab-26</module>-->
     <!--        <module>lab-27</module>-->
     <!--        <module>lab-28</module>-->
@@ -53,7 +54,7 @@
     <!--        <module>lab-31</module>-->
     <!--        <module>lab-32</module>-->
     <!--        <module>lab-33</module>-->
-    <!--        <module>lab-34</module>-->
+            <module>lab-34-sb-Actuator</module>
     <!--        <module>lab-35</module>-->
     <!--        <module>lab-36</module>-->
     <!--        <module>lab-37</module>-->
@@ -66,7 +67,7 @@
     <!--        <module>lab-44</module>-->
     <!--        <module>lab-45</module>-->
     <!--        <module>lab-46</module>-->
-    <!--        <module>lab-47</module>-->
+    <!--        <module>lab-47-sb-autoconfigure</module>-->
     <!--        <module>lab-48-hot-swap</module>-->
     <!--        <module>lab-49</module>-->
     <!--        <module>lab-50</module>-->

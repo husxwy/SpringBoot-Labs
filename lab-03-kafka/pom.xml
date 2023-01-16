@@ -21,6 +21,7 @@
         <module>lab-03-kafka-demo-concurrency</module>
         <module>lab-03-kafka-demo-transaction</module>
         <module>lab-03-kafka-demo-ack</module>
+        <module>kafka-sort-consume</module>
     </modules>
 
 </project>

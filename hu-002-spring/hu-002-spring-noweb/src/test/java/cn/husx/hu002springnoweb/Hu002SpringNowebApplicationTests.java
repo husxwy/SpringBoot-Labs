@@ -1,13 +1,13 @@
-package com.example.hu001httpclient4;
+package cn.husx.hu002springnoweb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Hu001Httpclient4ApplicationTests {
+class Hu002SpringNowebApplicationTests {
 
-  @Test
-  void contextLoads() {
-  }
+	@Test
+	void contextLoads() {
+	}
 
 }

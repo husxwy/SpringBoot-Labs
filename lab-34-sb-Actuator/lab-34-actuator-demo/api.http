@@ -1,0 +1,44 @@
+GET http://127.0.0.1:8080/actuator
+###
+GET http://127.0.0.1:8080/actuator/health
+###
+GET http://127.0.0.1:8080/actuator/info
+###
+GET http://127.0.0.1:8080/actuator/bean
+###
+GET http://127.0.0.1:8080/actuator/caches
+###
+GET http://127.0.0.1:8080/actuator/caches/{cache}
+###
+GET http://127.0.0.1:8080/actuator/health/health/{*path}
+###
+GET http://127.0.0.1:8080/actuator/conditions
+###
+GET http://127.0.0.1:8080/actuator/configprops
+###
+GET http://127.0.0.1:8080/actuator/env
+###
+GET http://127.0.0.1:8080/actuator/env/{toMatch}
+###
+GET http://127.0.0.1:8080/actuator/loggers
+###
+GET http://127.0.0.1:8080/actuator/loggers/{name}
+###
+GET http://127.0.0.1:8080/actuator/heapdump
+###
+GET http://127.0.0.1:8080/actuator/threaddump
+###
+GET http://127.0.0.1:8080/actuator/metrics/{requiredMetricName}
+###
+GET http://127.0.0.1:8080/actuator/scheduledtasks
+###
+GET http://127.0.0.1:8080/actuator/mappings
+
+
+
+
+
+
+
+
+

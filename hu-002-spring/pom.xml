@@ -74,7 +74,7 @@
   </build>
   <modules>
     <module>hu-002-spring-thread-pool</module>
-<!--    <module>lab-01-springsecurity-demo-role</module>-->
+    <module>hu-002-spring-noweb</module>
   </modules>
 
 </project>

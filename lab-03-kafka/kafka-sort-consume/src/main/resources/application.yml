@@ -2,9 +2,9 @@ spring:
   application:
     name: kafka-sort-consume
 server:
-  port: 8088
+  port: 8080
 kafka:
-  server: 127.0.0.1:9092
+  server: 10.8.14.47:9092,10.8.14.47:9093,10.8.14.47:9094
   groupId: baiyan
   order:
     topic: baiyan-test

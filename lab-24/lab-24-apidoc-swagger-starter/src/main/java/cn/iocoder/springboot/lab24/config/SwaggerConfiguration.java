@@ -17,7 +17,9 @@ public class SwaggerConfiguration {
     @Bean
     public Docket createRestApi() {
         // 创建 Docket 对象
-        return new Docket(DocumentationType.SWAGGER_2) // 文档类型，使用 Swagger2
+        return new Docket(DocumentationType.OAS_30) // 文档类型，使用 Swagger2
+//DocumentationType.SWAGGER_2 文档类型，使用 Swagger2
+//DocumentationType.OAS_30  文档类型，使用 Swagger3
                 .apiInfo(this.apiInfo()) // 设置 API 信息
                 // 扫描 Controller 包路径，获得 API 接口
                 .select()
