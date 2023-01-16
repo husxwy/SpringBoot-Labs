@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>lab-47</artifactId>
+    <artifactId>lab-47-sb-autoconfigure</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>yunai-server-spring-boot-starter</module>
