@@ -8,7 +8,14 @@ public class Controller {
 
     @GetMapping("/hello")
     public String hello() {
-        return "world";
+        return "world undertow";
+    }
+
+    @GetMapping("/sleep")
+    public String sleep() throws InterruptedException {
+        Thread.sleep(1000L);
+        Thread.sleep(1000L);
+        return "sleep";
     }
 
 }

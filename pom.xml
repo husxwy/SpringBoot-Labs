@@ -16,10 +16,12 @@
   <modules>
 
     <!--     hu 组件等 demo    -->
-<!--    <module>hu-000-server</module>-->
-<!--    <module>hu-001-http</module>-->
-<!--    <module>hu-002-spring</module>-->
-<!--    <module>hu-003-JMH</module>-->
+    <module>hu-000-demo</module>
+    <module>hu-000-server</module>
+    <module>hu-000-temp</module>
+    <module>hu-001-http</module>
+    <module>hu-002-spring</module>
+    <module>hu-003-JMH</module>
 
 
 
@@ -28,7 +30,7 @@
     <!--        <module>lab-02-spring-security-oauth</module>-->
             <module>lab-03-kafka</module>
     <!--        <module>lab-04-rabbitmq</module>-->
-    <!--        <module>lab-05-benchmark-tomcat-jetty-undertow</module>-->
+            <module>lab-05-benchmark-tomcat-jetty-undertow</module>
     <!--        <module>lab-06</module>-->
     <!--        <module>lab-07</module>-->
     <!--        <module>lab-11-spring-data-redis</module>-->
@@ -47,7 +49,7 @@
 <!--            <module>lab-24</module>-->
 <!--            <module>lab-25</module>-->
     <!--        <module>lab-26</module>-->
-    <!--        <module>lab-27</module>-->
+    <!--        <module>lab-27-sb-WebFlux</module>-->
     <!--        <module>lab-28</module>-->
     <!--        <module>lab-29</module>-->
     <!--        <module>lab-30</module>-->
@@ -69,7 +71,7 @@
     <!--        <module>lab-46</module>-->
     <!--        <module>lab-47-sb-autoconfigure</module>-->
     <!--        <module>lab-48-hot-swap</module>-->
-    <!--        <module>lab-49</module>-->
+    <!--        <module>lab-49-Lombok</module>-->
     <!--        <module>lab-50</module>-->
     <!--        <module>lab-51</module>-->
     <!--        <module>lab-52</module>-->
