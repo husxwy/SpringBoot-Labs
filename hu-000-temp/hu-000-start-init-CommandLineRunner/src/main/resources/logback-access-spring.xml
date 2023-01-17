@@ -1,0 +1,39 @@
+<configuration>
+  <!-- always a good activate OnConsoleStatusListener -->
+  <!-- 监听Logback状态变化,立即输出到控制台 -->
+  <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
+
+  <timestamp key="startTime" datePattern="yyyyMMdd" timeReference="contextBirth"/>
+  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+  <springProperty scope="context" name="APP_NAME" source="spring.application.name"/>
+  <!--    <springProperty scope="context" name="LOG_BASE_PATH" source="app.log.dir"/>-->
+  <property name="LOG_BASE_PATH" value="${LOG_PATH:-${java.io.tmpdir:-/logs}}"/>
+
+  <property name="LOG_PATH" value="${LOG_BASE_PATH}/${APP_NAME}/${startTime}/${HOSTNAME}"/>
+  <!--    <property name="COLLECT_PATH" value="${user.home}/${APP_NAME}_collection/logs/${startTime}"/>-->
+  <property name="PATTERN"
+            value="%d{yyyy-MM-dd HH:mm:ss.SSS}|%5p|%X{X-B3-TraceId:-}|%X{X-B3-SpanId:-}|%X{X-Span-Export:-}|${PID:- }|%t|%-40.40logger{39}|%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+
+  <!--appender规则-->
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_PATH}/access.${HOSTNAME}.log</file>
+<!--    <file>/Users/husx/00temp/logs/review-test/20220303/husxdeMacBook-Pro/access.log</file>-->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_PATH}/access.${HOSTNAME}.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+    </rollingPolicy>
+
+    <encoder>
+      <pattern>[%t{ISO8601}]|[%i{X-B3-TraceId},%i{X-B3-SpanId:-},%i{X-Span-Export:-}]|%A|%h|%i{X-Real-IP}|%u|"%r"|%s|%b|%D|"%i{Referer}"|"%i{User-Agent}"</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>[%t{ISO8601}]|[%i{X-B3-TraceId},%i{X-B3-SpanId:-},%i{X-Span-Export:-}]|%A|%h|%i{X-Real-IP}|%u|"%r"|%s|%b|%D|"%i{Referer}"|"%i{User-Agent}"</pattern>
+      <charset>utf8</charset>
+    </encoder>
+  </appender>
+
+<!--  <appender-ref ref="FILE" />-->
+  <appender-ref ref="CONSOLE" />
+</configuration>
