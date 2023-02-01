@@ -1,0 +1,13 @@
+server:
+  port: 9301
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.8.14.84:30336/hero_all?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 9ZeNk0DghH
+# 生成静态页的位置
+pagepath: ~/static/items
+
+
+

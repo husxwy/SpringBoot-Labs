@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <timestamp key="startTime" datePattern="yyyyMMdd" timeReference="contextBirth"/>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <springProperty scope="context" name="APP_NAME" source="app.name"/>
+    <!--    <springProperty scope="context" name="LOG_BASE_PATH" source="app.log.dir"/>-->
+    <property name="LOG_BASE_PATH" value="${LOG_PATH:-${java.io.tmpdir:-/logs}}"/>
+
+    <property name="LOG_PATH" value="${LOG_BASE_PATH}/${APP_NAME}/${startTime}/${HOSTNAME}"/>
+    <!--    <property name="COLLECT_PATH" value="${user.home}/${APP_NAME}_collection/logs/${startTime}"/>-->
+    <property name="LOG_FILE" value="${LOG_PATH}/application.log"/>
+    <property name="PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS}|%clr(%5p)|%X{X-B3-TraceId:-}|%X{X-B3-SpanId:-}|%X{X-Span-Export:-}|${PID:- }|%t|%-40.40logger{39}|%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+
+    <appender name="APPLICATION" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/application.${HOSTNAME}.log</file>
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/application.${HOSTNAME}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- 超过30天的备份文件会被删除 -->
+            <maxHistory>185</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+
+    <appender name="SQL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/sql.${HOSTNAME}.log</file>
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/sql.${HOSTNAME}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>20MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- 超过30天的备份文件会被删除 -->
+            <maxHistory>185</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <springProfile name="test,staging,project,gray,prod">
+        <logger name="cn.howso.asp.api.eureka.client.dao" additivity="false">
+            <level value="INFO"/>
+            <appender-ref ref="SQL"/>
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="APPLICATION"/>
+        </root>
+    </springProfile>
+    <springProfile name="dev,local,husx">
+        <logger name="cn.howso.asp.api.eureka.client.dao" additivity="false">
+            <level value="INFO"/>
+            <appender-ref ref="SQL"/>
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="APPLICATION"/>
+        </root>
+    </springProfile>
+
+</configuration>

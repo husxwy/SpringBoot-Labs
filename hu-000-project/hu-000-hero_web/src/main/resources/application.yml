@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: hero_web
+  profiles:
+    active: dev
+
+# mybatis plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mybatis/*.xml #加载映射文件
+  type-aliases-package: com.itxiong.facepay.domain #别名搜索的包
+  configuration:
+    lazy-loading-enabled: false #打开懒加载
+    aggressive-lazy-loading: false #关闭积极懒加载
+  global-config:
+    banner: false
